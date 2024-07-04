@@ -1,0 +1,33 @@
+---
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: tryon
+    password: tryon
+    url: ${DB_CONNECTION_STR}
+  application:
+    name: try-on-service
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+  rabbitmq:
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASS}
+    virtual-host: ${RABBITMQ_VHOST}
+
+remote:
+  assetServiceId: asset-manager
+  inferenceServiceId: model-api
+  preprocessingServiceId: preprocessor
+jwt:
+  secret: "mysecretmysecretmysecretmysecretmysecretmysecretmysecret"
+
+google:
+  client-id: "810620300444-tpg5ludab1mq0v7sjjl8eq16oncdpn1k.apps.googleusercontent.com"
+server:
+  port: 8000
+---
